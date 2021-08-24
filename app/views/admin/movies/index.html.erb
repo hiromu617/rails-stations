@@ -1,0 +1,41 @@
+<h1>admin movies</h1>
+<% @movies.each do |movie| %>
+<table>
+  <tr>
+    <th>ID</th>
+    <td><%= movie.id %></td>
+  </tr>
+  <tr>
+    <th>タイトル</th>
+    <td><%= movie.name %></td>
+  </tr>
+  <tr>
+    <th>公開年</th>
+    <td><%= movie.year %></td>
+  </tr>
+  <tr>
+    <th>概要</th>
+    <td><%= movie.description %></td>
+  </tr>
+  <tr>
+    <th>画像URL</th>
+    <td><%= link_to "画像", movie.image_url %></td>
+  </tr>
+  <tr>
+    <th>上映中</th>
+    <% if movie.is_showing %>
+    <td>上映中</td>
+    <% else %>
+    <td>上映予定</td>
+    <% end %>
+  </tr>
+  <tr>
+    <th>登録日時</th>
+    <td><%= movie.created_at %></td>
+  </tr>
+  <tr>
+    <th>更新日時</th>
+    <td><%= movie.updated_at %></td>
+  </tr>
+</table>
+<% end %>

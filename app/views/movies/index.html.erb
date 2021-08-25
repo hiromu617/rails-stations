@@ -1,4 +1,4 @@
-<h1>admin movies</h1>
+<h1>movies</h1>
 <% @movies.each do |movie| %>
 <table>
   <tr>
@@ -15,11 +15,15 @@
   </tr>
   <tr>
     <th>概要</th>
-    <td><%= movie.description %></td>
+    <td><%= simple_format(h(movie.description)) %></td>
   </tr>
   <tr>
     <th>画像URL</th>
-    <td><%= image_tag movie.image_url %></td>
+    <%
+=begin%>
+ <td><%= image_tag movie.image_url %></td>
+<%
+=end%>
   </tr>
   <tr>
     <th>上映中</th>

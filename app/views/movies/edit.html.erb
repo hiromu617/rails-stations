@@ -1,0 +1,21 @@
+<h1>Update movie</h1>
+<%= form_with model: @movie, url: {controller: 'movies', action: 'update' } do |form| %>
+  <%= render 'shared/error_messages' %>
+
+  <%= label :name, "タイトル" %>
+  <%= form.text_field :name %><br>
+
+  <%= label :year, "公開年" %>
+  <%= form.number_field :year, in: 1900..2021, step: 1 %><br>
+
+  <%= label :image_url, "画像URL" %>
+  <%= form.text_field :image_url %><br>
+
+  <%= label :description, "概要" %>
+  <%= form.text_area :description %><br>
+
+  <%= label :is_showing, "上映中" %>
+  <%= form.check_box :is_showing %><br>
+
+  <%= form.submit %>
+<% end %>

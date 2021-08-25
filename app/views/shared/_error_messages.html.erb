@@ -1,0 +1,10 @@
+<% if @movie.errors.any? %>
+  <p>
+  The form contains <%= pluralize(@movie.errors.count, "error") %>.
+  </p>
+  <ul>
+  <% @movie.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>

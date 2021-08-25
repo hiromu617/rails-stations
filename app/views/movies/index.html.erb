@@ -7,7 +7,7 @@
   </tr>
   <tr>
     <th>タイトル</th>
-    <td><%= movie.name %></td>
+    <td><%= link_to movie.name, edit_movie_path(movie) %></td>
   </tr>
   <tr>
     <th>公開年</th>
